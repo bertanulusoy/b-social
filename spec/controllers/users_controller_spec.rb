@@ -2,6 +2,14 @@
 require File.expand_path("../../rails_helper", __FILE__)
 
 RSpec.describe UsersController, :type => :controller do
+let(:valid_attributes){ {
+  "first_name" => "First Name",
+  "last_name" => "Last Name",
+  "email" => "email@example.com",
+  "password" => "password12345",
+  "password_confirmation" => "password12345"
+} }
+
 let(:valid_session){ {} }
 
 describe "GET new" do
@@ -22,7 +30,8 @@ end
 describe "POST create" do
   describe "with valid params" do
     it "creates a new User" do
-      
+      expect{
+      }
     end
   end
 end
