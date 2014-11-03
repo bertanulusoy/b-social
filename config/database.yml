@@ -17,7 +17,7 @@ default: &default
   pool: 5
   username: root
   password: 1234
-  socket: /var/run/mysqld/mysqld.sock
+  #socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
@@ -25,7 +25,7 @@ development:
 
 test:
    <<: *default
-   database: b-soacial_test
+   database: b-social_test
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,9 +57,11 @@ test:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: b-social_test
+
+#test:
+#  <<: *default
+#  database: b-social_test
+
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
