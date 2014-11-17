@@ -8,12 +8,13 @@ describe "Creating a post" do
 		options[:body] ||= "This the body of the post."
 
 		visit "/posts"
+		#puts page.body ************debug statement
 		click_link "New Post"
 		expect(page).to have_content("New Post")
 
 		fill_in "Title", with: options[:title]
 		fill_in "Body", with: options[:body]
-		click_button "Create a post"
+		click_button "Save"
 	end
 
 	before do
