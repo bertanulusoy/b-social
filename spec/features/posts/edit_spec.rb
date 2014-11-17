@@ -1,8 +1,8 @@
 require File.expand_path("../../../../spec/rails_helper", __FILE__)
 
 describe "Editing a post" do
-	let!(:post) { Post.create(title:"Groceries", body: "Groceries list.") }
 	let(:user) { create(:user) }
+	let!(:post) { Post.create(title:"Groceries", body: "Groceries list.") }
 
 	def update_a_post(options={})
 		options[:title] ||= "My post"
