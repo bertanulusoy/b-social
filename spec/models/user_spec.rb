@@ -11,6 +11,11 @@ RSpec.describe User, :type => :model do
 			password_confirmation: "treehouse1234"
 		} 
 	}
+
+	context "relationships" do
+		it { should have_many(:posts) }
+	end
+
 	context "validations" do
 		
 		let(:user) { User.new(valid_attributes) }

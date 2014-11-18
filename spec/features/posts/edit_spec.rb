@@ -1,8 +1,9 @@
 require File.expand_path("../../../../spec/rails_helper", __FILE__)
 
 describe "Editing a post" do
-	let(:user) { create(:user) }
-	let!(:post) { Post.create(title:"Groceries", body: "Groceries list.") }
+	let(:user) { create(:user) }  #factory :user
+	let!(:post) { create(:post) } #factory :post  -> no need that => #user.posts.create(title:"Groceries", body: "Groceries list.")
+	# or no need => Post.create(title:"Groceries", body: "Groceries list.") }
 
 	def update_a_post(options={})
 		options[:title] ||= "My post"
@@ -21,7 +22,7 @@ describe "Editing a post" do
 	end
 
 	before do
-		sign_in(user, password: "treehouse1")
+		sign_in post.user, password: "treehouse1" #post.user => let!(:post) nesnesini işaret ediyor
 	end
 
 	
