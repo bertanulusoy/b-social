@@ -6,13 +6,25 @@ Rails.application.routes.draw do
 	get "/login" => "user_sessions#new", as: :login
 	delete "/logout" => "user_sessions#destroy", as: :logout
 
-  # You can have the root of your site routed with "root"
-  root 'home#index'
-  
-  resources :posts
-  resources :users
+ 
+  resources :users 
 	resources :user_sessions, only: [:new, :create]
-  # Example of regular route:
+  #resource :password_resets, only: [:new, :create, :edit, :update]
+
+	#get 'password_resets/edit.:id', to: 'password_resets#edit'
+	resources :posts
+
+  resources :password_resets do
+      member do
+        patch :complete
+      end
+  end
+
+	# You can have the root of your site routed with "root"
+ 
+ 	root 'home#index'
+
+	# Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

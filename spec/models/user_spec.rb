@@ -60,6 +60,20 @@ RSpec.describe User, :type => :model do
 			expect(user.save).to be_truthy
 			expect(user.email).to eq("mike@teamtreehouse.com")
 		end
+	end
+
+	describe "#generate_password_reset_token!" do
+		let(:user){ create(:user) }
+		
+		it "changes the password_reset_token attribute" do
+			expect { user.generate_password_reset_token! }.to change{ user.password_reset_token }
+		end
+
+		it "calls SecureRandomurlsafe_base64 to generate the password_reset_token" do
+			expect(SecureRandom).to receive(:urlsafe_base64)
+			user.generate_password_reset_token!	
+		end
+
 
 	end
 end

@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.6'
+gem 'angularjs-rails'
 gem 'bcrypt', '~> 3.1.9'
 # Use postgresql as the database for Active Record
 gem 'mysql', '2.9.1'
@@ -16,7 +17,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+
 gem 'spring', group: :development
+
 
 group :development, :test do
    gem 'rspec-rails', '~> 3.0.0'
@@ -25,6 +28,7 @@ end
 
 group :test do
    gem 'capybara', '~> 2.4.4'
+	 gem 'capybara-email'
    gem 'shoulda-matchers', require: false
 end
 # Use ActiveModel has_secure_password
