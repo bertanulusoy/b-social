@@ -33,7 +33,7 @@ describe "Forgotten passwords" do
     fill_in "Email", with: user.email
     fill_in "Password", with: "mynewpassword1"
     click_button "Log In"
-    expect(page).to have_content("Thanks for logging in!")
+    expect(page).to have_content("Thanks for the logging in!")
   end
 
 end
