@@ -17,9 +17,13 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'foundation-rails', '~> 5.4.5'
 
-gem 'spring', group: :development
 
+group :development do
+	gem 'spring'
+	gem 'quiet_assets', '~> 1.0.3'
+end
 
 group :development, :test do
    gem 'rspec-rails', '~> 3.0.0'
