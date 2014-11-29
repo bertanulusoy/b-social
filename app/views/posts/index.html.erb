@@ -1,6 +1,19 @@
-<h1>Post Lists</h1>
+<h2 class="page-title">Post Lists</h2>
+
+
+<ul class="post-list no-bullet">
 
 <% @posts.each do |post| %>
+	<li id="<%= dom_id(post) %>" class="clearfix">
+		<%= link_to post_path(post), class:"row" do %>
+			<div class="small-10 medium-11 columns truncate" title="<%= post.title %>">
+				<%= post.title %>
+			</div>
+		<% end %>
+	</li>
+
+
+
 	<div class="post" id="<%= dom_id(post) %>">
 		<h2><%= post.title %></h2>
 		<p><%= post.body %></p>
@@ -13,6 +26,7 @@
 	</div>
 <% end %>
 
+</ul>
 <br>
 
 <%= link_to 'New Post', new_post_path %>
